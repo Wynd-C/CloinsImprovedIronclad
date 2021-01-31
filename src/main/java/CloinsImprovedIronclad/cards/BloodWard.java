@@ -34,7 +34,6 @@ public class BloodWard extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;  // COST = 1
-    private static final int UPGRADED_COST = 1; // UPGRADED_COST = 1
 
     private static final int BLOCK = 13;    // DAMAGE = 13
     private static final int UPGRADE_PLUS_BLOCK = 2;  // UPGRADE_PLUS_DMG = 15
@@ -65,7 +64,6 @@ public class BloodWard extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
