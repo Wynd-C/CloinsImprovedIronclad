@@ -53,5 +53,10 @@
   "CloinsImprovedIronclad:BloodWard": {
     "NAME": "Blood Ward",
     "DESCRIPTION": "Lose !M! HP. NL Gain !B! Block."
+  },
+  "CloinsImprovedIronclad:ParryAndRiposte": {
+    "NAME": "Parry and Riposte",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M!."
   }
 }
+git
