@@ -14,7 +14,7 @@ import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
 @AutoAdd.Ignore // Remove this line when you make a template. Refer to https://github.com/daviscook477/BaseMod/wiki/AutoAdd if you want to know what it does.
-public class CardTemplate extends AbstractDynamicCard {
+public class Guide extends AbstractDynamicCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -61,7 +61,7 @@ public class CardTemplate extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public CardTemplate() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public Guide() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }

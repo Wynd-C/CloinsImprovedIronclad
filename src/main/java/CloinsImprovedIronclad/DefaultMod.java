@@ -38,21 +38,8 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-// Please don't just mass replace "theDefault" with "yourMod" everywhere.
-// It'll be a bigger pain for you. You only need to replace it in 4 places.
-// I comment those places below, under the place where you set your ID.
+//
 
-//TODO: FIRST THINGS FIRST: RENAME YOUR PACKAGE AND ID NAMES FIRST-THING!!!
-// Right click the package (Open the project pane on the left. Folder with black dot on it. The name's at the very top) -> Refactor -> Rename, and name it whatever you wanna call your mod.
-// Scroll down in this file. Change the ID from "theDefault:" to "yourModName:" or whatever your heart desires (don't use spaces). Dw, you'll see it.
-// In the JSON strings (resources>localization>eng>[all them files] make sure they all go "yourModName:" rather than "theDefault", and change to "yourmodname" rather than "thedefault".
-// You can ctrl+R to replace in 1 file, or ctrl+shift+r to mass replace in specific files/directories, and press alt+c to make the replace case sensitive (Be careful.).
-// Start with the DefaultCommon cards - they are the most commented cards since I don't feel it's necessary to put identical comments on every card.
-// After you sorta get the hang of how to make cards, check out the card template which will make your life easier
 
 /*
  * With that out of the way:
@@ -185,7 +172,6 @@ public class DefaultMod implements
       
         setModID("CloinsImprovedIronclad");
         // cool
-        // TODO: NOW READ THIS!!!!!!!!!!!!!!!:
         
         // 1. Go to your resources folder in the project panel, and refactor> rename theDefaultResources to
         // yourModIDResources.
@@ -195,7 +181,7 @@ public class DefaultMod implements
         // Because your mod ID isn't the default. Your cards (and everything else) should have Your mod id. Not mine.
         // It's important that the mod ID prefix for keywords used in the cards descriptions is lowercase!
 
-        // 3. Scroll down (or search for "ADD CARDS") till you reach the ADD CARDS section, and follow the TODO instructions
+        // 3. Scroll down (or search for "ADD CARDS") till you reach the ADD CARDS section, and follow the
 
         // 4. FINALLY and most importantly: Scroll up a bit. You may have noticed the image locations above don't use getModID()
         // Change their locations to reflect your actual ID rather than theDefault. They get loaded before getID is a thing.
@@ -289,7 +275,7 @@ public class DefaultMod implements
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
         
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
+        BaseMod.addCharacter(new TheDefault("Cloin's Ironclad", TheDefault.Enums.THE_DEFAULT),
                 THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
         
         receiveEditPotions();
@@ -434,9 +420,6 @@ public class DefaultMod implements
 
         // The ID for this function isn't actually your modid as used for prefixes/by the getModID() method.
         // It's the mod id you give MTS in ModTheSpire.json - by default your artifact ID in your pom.xml
-
-        //TODO: Rename the "DefaultMod" with the modid in your ModTheSpire.json file
-        //TODO: The artifact mentioned in ModTheSpire.json is the artifactId in pom.xml you should've edited earlier
         new AutoAdd("CloinsImprovedIronclad") // ${project.artifactId}
             .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
             .setDefaultSeen(true)
