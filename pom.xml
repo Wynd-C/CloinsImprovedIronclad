@@ -92,17 +92,17 @@
 
         <resources>
             <resource>
-                <directory>src/main/CloinsImprovedIroncladResources</directory>
+                <directory>src/main/Resources</directory>
             </resource>
             <resource>
-                <directory>src/main/CloinsImprovedIroncladResources</directory>
+                <directory>src/main/Resources</directory>
                 <filtering>false</filtering>
                 <excludes>
                     <exclude>ModTheSpire.json</exclude>
                 </excludes>
             </resource>
             <resource>
-                <directory>src/main/CloinsImprovedIroncladResources</directory>
+                <directory>src/main/Resources</directory>
                 <filtering>true</filtering>
                 <includes>
                     <include>ModTheSpire.json</include>
