@@ -56,6 +56,7 @@
   },
   "CloinsImprovedIronclad:ParryAndRiposte": {
     "NAME": "Parry and Riposte",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M!."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M! Plated Armor. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL if the enemy intends to attack NL gain !M! Plated Armor."
   }
 }

@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
@@ -20,11 +22,11 @@ public class ParryAndRiposte extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    // public static final String ID = DefaultMod.makeID(Parry and Riposte.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String ID = DefaultMod.makeID("DefaultCommonAttack"); // DELETE THIS ONE.
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("Parry and Riposte.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
+    public static final String ID = DefaultMod.makeID(ParryAndRiposte.class.getSimpleName());
+    public static final String IMG = makeCardPath("Attack.png");
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -66,6 +68,7 @@ public class ParryAndRiposte extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
             this.exhaust = false;
             initializeDescription();
         }
