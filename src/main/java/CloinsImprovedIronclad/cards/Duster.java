@@ -1,5 +1,6 @@
 package CloinsImprovedIronclad.cards;
 
+import CloinsImprovedIronclad.actions.ExtraDrawAction;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -50,9 +51,8 @@ public class Duster extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){
-        this.addToBot(new ConditionalDrawAction(this.baseMagicNumber, CardType.STATUS));
+        AbstractDungeon.actionManager.addToBottom(new ExtraDrawAction(this.baseMagicNumber, CardType.STATUS));
     }
-
 
     // Upgraded stats.
     @Override
