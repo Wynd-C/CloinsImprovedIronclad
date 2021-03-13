@@ -1,5 +1,6 @@
 package CloinsImprovedIronclad.cards;
 
+import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.actions.DrawStatusAndCurseAction;
 import CloinsImprovedIronclad.characters.TheDefault;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -21,7 +22,7 @@ import java.util.Iterator;
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
 public class Duster extends AbstractDynamicCard {
-    public static final String ID = "Duster";
+    public static final String ID = DefaultMod.makeID(Duster.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -32,6 +33,7 @@ public class Duster extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int MAGICNUMBER = 3;
+    private static final int UPGRADE_PLUS_MAGICNUMBER = 1;
 
     public Duster() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -65,6 +67,7 @@ public class Duster extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
             initializeDescription();
         }
     }

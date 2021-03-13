@@ -33,7 +33,7 @@ public class ParryAndRiposte extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -41,8 +41,10 @@ public class ParryAndRiposte extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = 1
 
     private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 1;
 
     private static final int MAGICNUMBER = 3;
+    private static final int UPGRADE_PLUS_MAGICNUMBER = 1;
 
     // /STAT DECLARATION/
 
@@ -68,8 +70,9 @@ public class ParryAndRiposte extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
             rawDescription = UPGRADE_DESCRIPTION;
-            this.exhaust = false;
             initializeDescription();
         }
     }
