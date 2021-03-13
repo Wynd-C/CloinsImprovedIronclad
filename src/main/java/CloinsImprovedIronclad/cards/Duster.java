@@ -1,23 +1,11 @@
 package CloinsImprovedIronclad.cards;
 
 import CloinsImprovedIronclad.DefaultMod;
-import CloinsImprovedIronclad.actions.DrawStatusAndCurseAction;
+import CloinsImprovedIronclad.actions.DrawStatusAction;
 import CloinsImprovedIronclad.characters.TheDefault;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import java.util.Iterator;
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
@@ -25,7 +13,7 @@ public class Duster extends AbstractDynamicCard {
     public static final String ID = DefaultMod.makeID(Duster.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -43,9 +31,10 @@ public class Duster extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawStatusAndCurseAction(MAGICNUMBER, p));
+        for(int i = 0; i < MAGICNUMBER; i++)
+        AbstractDungeon.actionManager.addToBottom(new DrawStatusAction(MAGICNUMBER, p));
     }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    /* public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
@@ -62,7 +51,10 @@ public class Duster extends AbstractDynamicCard {
             return canUse;
         }
     }
+*/
 
+    // This code was taken from Clash, ergo it is checking if the ENTIRE draw pile consists of
+    // Status cards before returning whether the card can be used.
     @Override
     public void upgrade() {
         if (!upgraded) {

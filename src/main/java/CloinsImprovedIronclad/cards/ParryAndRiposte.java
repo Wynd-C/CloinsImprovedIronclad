@@ -41,7 +41,7 @@ public class ParryAndRiposte extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = 1
 
     private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DAMAGE = 1;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     private static final int MAGICNUMBER = 3;
     private static final int UPGRADE_PLUS_MAGICNUMBER = 1;

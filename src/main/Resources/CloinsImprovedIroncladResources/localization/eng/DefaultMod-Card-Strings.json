@@ -61,6 +61,6 @@
   },
   "CloinsImprovedIronclad:Duster": {
     "NAME": "Duster",
-    "DESCRIPTION": "Draw !M! Status Cards."
+    "DESCRIPTION": "Draw up to !M! Status Cards from your draw pile."
   }
 }

@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 
 
-public class DrawStatusAndCurseAction extends AbstractGameAction {
+public class DrawStatusAction extends AbstractGameAction {
     private int MagicNumber;
     private AbstractPlayer Player;
 
-    public DrawStatusAndCurseAction(int MagicNumber, AbstractPlayer p){
+    public DrawStatusAction(int MagicNumber, AbstractPlayer p){
         this.duration = 0.0F;
         this.actionType = ActionType.WAIT;
         this.amount = MagicNumber;
