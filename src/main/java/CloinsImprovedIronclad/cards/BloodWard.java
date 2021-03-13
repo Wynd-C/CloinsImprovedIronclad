@@ -19,7 +19,7 @@ import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 public class BloodWard extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(BloodWard.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Skill.png");// "public static final String IMG = makeCardPath("BloodWard.png");
+    public static final String IMG = makeCardPath("bloodward.png");// "public static final String IMG = makeCardPath("BloodWard.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
