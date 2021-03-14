@@ -4,10 +4,14 @@ import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.PummelDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.red.Pummel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -21,7 +25,10 @@ public class Pinch extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(Pinch.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+
 
 
     // /TEXT DECLARATION/
@@ -56,12 +63,13 @@ public class Pinch extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < magicNumber; i++)
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, defaultBaseSecondMagicNumber)));
+        for (int i = 0; i < magicNumber; i++)
+            AbstractDungeon.actionManager.addToBottom(new PummelDamageAction(m, new DamageInfo(p, baseDamage, this.damageTypeForTurn))
+            );
+        {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, defaultBaseSecondMagicNumber)));
         }
-
+    }
 
     // Upgraded stats.
     @Override
@@ -70,6 +78,7 @@ public class Pinch extends AbstractDynamicCard {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
             this.upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_ATTACKS);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

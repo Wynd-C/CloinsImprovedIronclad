@@ -65,7 +65,7 @@
   },
   "CloinsImprovedIronclad:Pinch": {
     "NAME": "Pinch",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !cloinsimprovedironclad:SecondMagic! strength.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage twice. NL Gain !cloinsimprovedironclad:SecondMagic! strength."
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 strength.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage twice. NL Gain 1 strength."
   }
 }
