@@ -77,7 +77,7 @@ public class Pinch extends AbstractDynamicCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_ATTACKS);
+            this.upgradeMagicNumber(UPGRADE_PLUS_ATTACKS);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
