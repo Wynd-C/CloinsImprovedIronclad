@@ -39,7 +39,7 @@ public class Pinch extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = CardColor.RED;
 
     private static final int COST = 0;  // COST = ${COST}
 
@@ -64,7 +64,7 @@ public class Pinch extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++)
-            AbstractDungeon.actionManager.addToBottom(new PummelDamageAction(m, new DamageInfo(p, baseDamage, this.damageTypeForTurn))
+            AbstractDungeon.actionManager.addToBottom(new PummelDamageAction(m, new DamageInfo(p, this.DAMAGE, this.damageTypeForTurn))
             );
         {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, defaultBaseSecondMagicNumber)));
