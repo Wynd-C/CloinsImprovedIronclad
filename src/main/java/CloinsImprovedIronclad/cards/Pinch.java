@@ -24,7 +24,7 @@ public class Pinch extends AbstractDynamicCard {
      // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Pinch.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Pinch.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

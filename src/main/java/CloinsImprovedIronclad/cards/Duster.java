@@ -11,7 +11,7 @@ import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
 public class Duster extends AbstractDynamicCard {
     public static final String ID = DefaultMod.makeID(Duster.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Duster.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
