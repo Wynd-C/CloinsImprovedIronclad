@@ -62,5 +62,10 @@
   "CloinsImprovedIronclad:Duster": {
     "NAME": "Duster",
     "DESCRIPTION": "Draw up to !M! Status Cards from your draw pile."
+  },
+  "CloinsImprovedIronclad:Pinch": {
+    "NAME": "Pinch",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !cloinsimprovedironclad:SecondMagic! strength.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage twice. NL Gain !cloinsimprovedironclad:SecondMagic! strength."
   }
 }
