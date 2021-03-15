@@ -56,8 +56,8 @@
   },
   "CloinsImprovedIronclad:ParryAndRiposte": {
     "NAME": "Parry and Riposte",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M! Plated Armor. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M! Plated Armor. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M! Plated Armor. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack NL gain !M! Plated Armor. NL Exhaust."
   },
   "CloinsImprovedIronclad:Duster": {
     "NAME": "Duster",
@@ -66,6 +66,14 @@
   "CloinsImprovedIronclad:Pinch": {
     "NAME": "Pinch",
     "DESCRIPTION": "Deal !D! damage. NL Gain 1 strength.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage twice. NL Gain 1 strength."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain 1 Strength."
+  },
+  "CloinsImprovedIronclad:EXClash": {
+    "NAME": "EX Clash",
+    "DESCRIPTION": "Deal 4 damage. NL If there are only Attacks in your hand NL Deal !D! damage."
+  },
+  "CloinsImprovedIronclad:ForwardMomentum": {
+    "NAME": "Forward Momentum",
+    "DESCRIPTION": "Play the top !M! cards of your deck."
   }
 }

@@ -19,9 +19,9 @@ public class Duster extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.RED;
 
     private static final int COST = 1;
+    private static final int UPGRADE_REDUCE_COST = 0;
 
     private static final int MAGICNUMBER = 3;
-    private static final int UPGRADE_PLUS_MAGICNUMBER = 1;
 
     public Duster() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -59,7 +59,7 @@ public class Duster extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+            upgradeBaseCost(UPGRADE_REDUCE_COST);
             initializeDescription();
         }
     }
