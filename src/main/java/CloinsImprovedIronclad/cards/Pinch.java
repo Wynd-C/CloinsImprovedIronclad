@@ -64,7 +64,7 @@ public class Pinch extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++)
-            AbstractDungeon.actionManager.addToBottom(new PummelDamageAction(m, new DamageInfo(p, this.DAMAGE, this.damageTypeForTurn))
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn))
             );
         {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, defaultBaseSecondMagicNumber)));
