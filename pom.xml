@@ -6,7 +6,7 @@
     <groupId>cloinsimprovedironclad</groupId>
     <artifactId>CloinsImprovedIronclad</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>Cloin's Improved Ironclad</name>
-    <version>0.4.3</version>
+    <version>0.4.4</version>
     <description>Humouring Cloin's ideas and see if we can't improve some of the lesser played archetypes.</description>
 
     <properties>

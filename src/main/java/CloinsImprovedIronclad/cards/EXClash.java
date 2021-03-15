@@ -38,6 +38,8 @@ public class EXClash extends AbstractDynamicCard {
     private static final int DAMAGE = 14;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
+    private static final int WEAK_DAMAGE = 4;
+
     // /STAT DECLARATION/
 
 
@@ -52,11 +54,11 @@ public class EXClash extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type != CardType.ATTACK){
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 4, damageTypeForTurn)));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.WEAK_DAMAGE, damageTypeForTurn)));
                 return;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, baseDamage, damageTypeForTurn)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.baseDamage, damageTypeForTurn)));
     }
 
 
