@@ -1,11 +1,13 @@
 package CloinsImprovedIronclad.cards;
 
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CloinsImprovedIronclad.DefaultMod;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
@@ -28,9 +30,9 @@ public class Momentum extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.RED;
 
     private static final int COST = 2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int MAGICNUMBER = 2;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
     private static final int SECOND_MAGIC_NUMBER = 2;
 
     // /STAT DECLARATION/
@@ -48,7 +50,7 @@ public class Momentum extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < defaultSecondMagicNumber; i++)
         AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), false));
-
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -2), -2));
     }
 
 
@@ -57,7 +59,7 @@ public class Momentum extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
             initializeDescription();
         }
     }

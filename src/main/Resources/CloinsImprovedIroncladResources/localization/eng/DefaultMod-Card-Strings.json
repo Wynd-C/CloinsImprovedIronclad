@@ -73,7 +73,7 @@
     "DESCRIPTION": "Deal 4 damage. NL If there are only Attacks in your hand NL Deal !D! damage."
   },
   "CloinsImprovedIronclad:Momentum": {
-    "NAME": "Momentum",
-    "DESCRIPTION": "Play the top !M! cards of your deck."
+    "NAME": "Demonic Gambit",
+    "DESCRIPTION": "Play the top !M! cards of your deck. Lose 2 Dexterity."
   }
 }
