@@ -2,8 +2,7 @@ package CloinsImprovedIronclad.cards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,15 +14,9 @@ import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.relics.AbstractRelic.LandingSound;
-import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
@@ -50,6 +43,8 @@ public class Refuse extends AbstractDynamicCard {
 
     private static final int COST = -2;  // COST = ${COST}
 
+    private static final int MAGICNUMBER = 1;
+
     private static final int DAMAGE = 5;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
@@ -74,6 +69,7 @@ public class Refuse extends AbstractDynamicCard {
     public void triggerOnManualDiscard() {
         calculateCardDamage(null);
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.MAGICNUMBER));
     }
 
     public AbstractCard makeCopy() {return new Refuse(); }

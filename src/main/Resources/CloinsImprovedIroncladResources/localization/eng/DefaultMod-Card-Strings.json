@@ -76,8 +76,12 @@
     "NAME": "Demonic Gambit",
     "DESCRIPTION": "Play the top !M! cards of your deck. Lose 2 Dexterity."
   },
-  "CloinsImpprovedIronclad:Refuse": {
+  "CloinsImprovedIronclad:Refuse": {
     "NAME": "Dangerous Refuse",
-    "DESCRIPTION": "If this card is discarded from your hand, deal !D! damage to all enemies."
+    "DESCRIPTION": "If this card is discarded from your hand, NL deal !D! damage to all enemies and draw !M! card."
+  },
+  "CloinsImprovedIronclad:Ferment": {
+    "NAME": "Fermenting Poison",
+    "DESCRIPTION": "Apply !M! Poison. NL Permanently Increase Poison applied by this card by 2."
   }
 }
