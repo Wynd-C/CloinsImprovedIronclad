@@ -41,7 +41,8 @@ public class Viscous extends AbstractDynamicCard {
 
     public Viscous() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC_NUMBER;
+        magicNumber = MAGIC_NUMBER;
+        baseMagicNumber = magicNumber;
     }
 
 

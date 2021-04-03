@@ -13,6 +13,7 @@ import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
@@ -34,12 +35,11 @@ public class Versatility extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int COST = 1;  // COST = ${COST
 
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 2;
@@ -71,6 +71,7 @@ public class Versatility extends AbstractDynamicCard {
         }
         else if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.THE_SILENT) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false ), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, 5),5));
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
@@ -83,7 +84,6 @@ public class Versatility extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

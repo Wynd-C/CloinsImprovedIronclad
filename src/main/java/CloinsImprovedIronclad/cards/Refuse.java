@@ -55,6 +55,8 @@ public class Refuse extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.isMultiDamage = true;
+        magicNumber = MAGICNUMBER;
+        baseMagicNumber = magicNumber;
     }
 
 
@@ -69,7 +71,7 @@ public class Refuse extends AbstractDynamicCard {
     public void triggerOnManualDiscard() {
         calculateCardDamage(null);
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.MAGICNUMBER));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
     }
 
     public AbstractCard makeCopy() {return new Refuse(); }

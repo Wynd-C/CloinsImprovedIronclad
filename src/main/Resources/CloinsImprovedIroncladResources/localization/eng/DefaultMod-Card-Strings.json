@@ -82,7 +82,7 @@
   },
   "CloinsImprovedIronclad:Ferment": {
     "NAME": "Fermenting Poison",
-    "DESCRIPTION": "Apply !M! Poison. NL Permanently Increase Poison applied by this card by 2."
+    "DESCRIPTION": "Apply !M! Poison. NL Permanently Increase Poison applied by this card by 2. NL Exhaust."
   },
   "CloinsImprovedIronclad:Viscous": {
     "NAME": "Viscous Poison",
