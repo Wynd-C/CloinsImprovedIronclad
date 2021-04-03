@@ -1,5 +1,6 @@
 package CloinsImprovedIronclad.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,6 +17,7 @@ import java.util.function.Predicate;
 
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
+
 
 public class EXClash extends AbstractDynamicCard {
 
@@ -54,11 +56,11 @@ public class EXClash extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type != CardType.ATTACK){
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.WEAK_DAMAGE, damageTypeForTurn)));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.WEAK_DAMAGE, this.damageTypeForTurn)));
                 return;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.baseDamage, damageTypeForTurn)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.baseDamage, this.damageTypeForTurn)));
     }
 
 

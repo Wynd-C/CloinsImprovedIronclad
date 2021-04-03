@@ -33,7 +33,6 @@ public class Momentum extends AbstractDynamicCard {
 
     private static final int MAGICNUMBER = 2;
     private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
-    private static final int SECOND_MAGIC_NUMBER = 2;
 
     // /STAT DECLARATION/
 
@@ -41,14 +40,13 @@ public class Momentum extends AbstractDynamicCard {
     public Momentum() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGICNUMBER;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC_NUMBER;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < defaultSecondMagicNumber; i++)
+        for(int i = 0; i < MAGICNUMBER; i++)
         AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), false));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -2), -2));
     }
