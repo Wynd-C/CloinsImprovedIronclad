@@ -5,9 +5,9 @@
     <!--The author name(s) as they appear in MTS and any other comments are in your ModTheSpire.json-->
     <groupId>cloinsimprovedironclad</groupId>
     <artifactId>CloinsImprovedIronclad</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
-    <name>Cloin's Improved Ironclad</name>
-    <version>0.4.5</version>
-    <description>Humouring Cloin's ideas and see if we can't improve some of the lesser played archetypes.</description>
+    <name>Improve The Spire</name>
+    <version>0.4.7</version>
+    <description>Increased playability for struggling archetypes.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
