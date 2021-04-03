@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
-
+@AutoAdd.Ignoregit commi
 public class EXClash extends AbstractDynamicCard {
 
 

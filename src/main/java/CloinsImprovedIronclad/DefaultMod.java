@@ -74,7 +74,7 @@ public class DefaultMod implements
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Cloin's Improved Ironclad";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
+    private static final String AUTHOR = "Wynd (Hack-Proof), Badger"; // And pretty soon - You!
     private static final String DESCRIPTION = "An Improved Ironclad with emphasis on less-developed archetypes. Made from DeafultMod, by Gremious.";
     
     // =============== INPUT TEXTURE LOCATION =================
