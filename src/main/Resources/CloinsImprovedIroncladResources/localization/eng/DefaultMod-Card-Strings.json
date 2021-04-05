@@ -77,8 +77,8 @@
     "DESCRIPTION": "Play the top !M! cards of your deck. Lose 2 Dexterity."
   },
   "CloinsImprovedIronclad:Refuse": {
-    "NAME": "Dangerous Refuse",
-    "DESCRIPTION": "If this card is discarded from your hand, NL deal !D! damage to all enemies and draw !M! card."
+    "NAME": "Failed Alchemy",
+    "DESCRIPTION": "If this card is discarded from your hand, NL Apply !M! poison to all Enemies."
   },
   "CloinsImprovedIronclad:Ferment": {
     "NAME": "Fermenting Poison",

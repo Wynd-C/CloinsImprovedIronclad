@@ -22,7 +22,7 @@ public class Ferment extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Ferment.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Skill.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Ferment.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
     // /TEXT DECLARATION/
 

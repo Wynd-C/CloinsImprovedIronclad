@@ -19,7 +19,7 @@ public class Viscous extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Viscous.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Viscous.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
     // /TEXT DECLARATION/
 

@@ -16,7 +16,7 @@ public class Momentum extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Momentum.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Skill.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Momentum.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
 
     // /TEXT DECLARATION/
