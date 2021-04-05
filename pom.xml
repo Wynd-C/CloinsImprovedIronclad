@@ -5,8 +5,8 @@
     <!--The author name(s) as they appear in MTS and any other comments are in your ModTheSpire.json-->
     <groupId>cloinsimprovedironclad</groupId>
     <artifactId>CloinsImprovedIronclad</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
-    <name>InSpire</name>
-    <version>0.5.0</version>
+    <name>SpireSide</name>
+    <version>0.5.1</version>
     <description>Increased playability for struggling archetypes.</description>
 
     <properties>
