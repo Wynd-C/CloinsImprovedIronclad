@@ -6,7 +6,7 @@
     <groupId>cloinsimprovedironclad</groupId>
     <artifactId>CloinsImprovedIronclad</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>SpireSide</name>
-    <version>0.5.1</version>
+    <version>0.5.3</version>
     <description>Increased playability for struggling archetypes.</description>
 
     <properties>

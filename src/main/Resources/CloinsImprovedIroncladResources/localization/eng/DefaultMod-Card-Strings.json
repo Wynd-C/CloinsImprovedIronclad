@@ -91,5 +91,9 @@
   "CloinsImprovedIronclad:Versatility": {
     "NAME": "Versatile Strike",
     "DESCRIPTION": "Deal !D! Damage. NL This card's effect depends on your class."
+  },
+  "CloinsImprovedIronclad:Pocket": {
+    "NAME": "Pickpocket",
+    "DESCRIPTION": "If the enemy does not intend to attack NL Gain !M! gold. NL Exhaust."
   }
 }

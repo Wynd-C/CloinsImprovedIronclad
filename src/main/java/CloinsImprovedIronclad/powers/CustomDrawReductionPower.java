@@ -1,4 +1,4 @@
-package CloinsImprovedIronclad.cards;
+package CloinsImprovedIronclad.powers;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -8,14 +8,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 
-public class CustomDrawReduction extends AbstractPower {
+public class CustomDrawReductionPower extends AbstractPower {
     public static final String POWER_ID = "Draw Reduction";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
-    private boolean justApplied = true;
 
-    public CustomDrawReduction(AbstractCreature owner, int amount) {
+    public CustomDrawReductionPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = "Draw Reduction";
         this.owner = owner;
