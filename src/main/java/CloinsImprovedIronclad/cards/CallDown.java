@@ -73,7 +73,7 @@ public class CallDown extends AbstractDynamicCard {
 
     }
     public AbstractCard makeCopy() {
-        return new LockOn();
+        return new CallDown();
     }
 
     // Upgraded stats.
