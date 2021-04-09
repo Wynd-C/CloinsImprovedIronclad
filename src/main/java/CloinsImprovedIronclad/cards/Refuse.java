@@ -21,6 +21,8 @@ import com.megacrit.cardcrawl.powers.ChokePower;
 import com.megacrit.cardcrawl.powers.NoxiousFumesPower;
 
 
+import java.util.Iterator;
+
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
 
@@ -45,8 +47,8 @@ public class Refuse extends AbstractDynamicCard {
 
     private static final int COST = -2;  // COST = ${COST}
 
-    private static final int MAGICNUMBER = 4;
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 2;
+    private static final int MAGICNUMBER = 2;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
 
     // /STAT DECLARATION/
 
@@ -67,15 +69,21 @@ public class Refuse extends AbstractDynamicCard {
     }
 
     public void triggerOnManualDiscard() {
-        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-        if(randomMonster != null){
-            AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(
-                            randomMonster, AbstractDungeon.player, new ChokePower(randomMonster, magicNumber), magicNumber)
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.flash();
+            Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
+
+            while (var3.hasNext()) {
+                AbstractMonster monster = (AbstractMonster) var3.next();
+                if (!monster.isDead && !monster.isDying) {
+                    AbstractDungeon.actionManager.addToBottom(
+                            new ApplyPowerAction(
+                                    monster, AbstractDungeon.player, new ChokePower(monster, magicNumber), magicNumber)
                     );
+                }
+            }
         }
     }
-
     public AbstractCard makeCopy() {return new Refuse(); }
 
 

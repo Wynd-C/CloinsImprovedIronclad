@@ -77,8 +77,8 @@
     "DESCRIPTION": "Play the top !M! cards of your deck. Lose 2 Dexterity."
   },
   "CloinsImprovedIronclad:Refuse": {
-    "NAME": "Failed Alchemy",
-    "DESCRIPTION": "If this card is discarded from your hand, NL Apply !M! poison to all Enemies."
+    "NAME": "Choking Gas Bomb",
+    "DESCRIPTION": "If this card is discarded from your hand, NL Apply !M! Choking to All Enemies."
   },
   "CloinsImprovedIronclad:Ferment": {
     "NAME": "Fermenting Poison",
@@ -93,12 +93,12 @@
     "DESCRIPTION": "Deal !D! Damage. NL This card's effect depends on your class."
   },
   "CloinsImprovedIronclad:Pocket": {
-    "NAME": "Pickpocket",
+    "NAME": "Pocketed",
     "DESCRIPTION": "If the enemy does not intend to attack NL Gain !M! gold. NL Exhaust."
   },
   "CloinsImprovedIronclad:StrikeFear": {
     "NAME": "Strike Fear",
-    "DESCRIPTION": "Apply !M! Vulnerable to an enemy 3 times. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weakened to an enemy 3 times. NL Exhaust."
   },
   "CloinsImprovedIronclad:CallDown": {
     "NAME": "Call Down",

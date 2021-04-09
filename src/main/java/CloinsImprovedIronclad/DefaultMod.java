@@ -60,7 +60,6 @@ public class DefaultMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber,
         PostInitializeSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -73,9 +72,9 @@ public class DefaultMod implements
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Cloin's Improved Ironclad";
+    private static final String MODNAME = "SpireSide";
     private static final String AUTHOR = "Wynd (Hack-Proof), Badger"; // And pretty soon - You!
-    private static final String DESCRIPTION = "An Improved Ironclad with emphasis on less-developed archetypes. Made from DeafultMod, by Gremious.";
+    private static final String DESCRIPTION = "Contains cards to support struggling archetypes for each class. Made from DeafultMod, by Gremious.";
     
     // =============== INPUT TEXTURE LOCATION =================
     
@@ -270,18 +269,6 @@ public class DefaultMod implements
     
     
     // =============== LOAD THE CHARACTER =================
-    
-    @Override
-    public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
-        
-        BaseMod.addCharacter(new TheDefault("Cloin's Ironclad", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
-        
-        receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
-    }
-    
     // =============== /LOAD THE CHARACTER/ =================
     
     

@@ -32,11 +32,6 @@ public class PocketAction extends AbstractGameAction {
     public void update(){
         if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() >= 0){
             AbstractDungeon.player.gainGold(this.increaseGold);
-
-            for(int i = 0; i < this.increaseGold; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
-
-            }
         }
         this.isDone = true;
     }

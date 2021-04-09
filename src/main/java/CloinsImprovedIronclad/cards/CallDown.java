@@ -32,8 +32,8 @@ public class CallDown extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.BLUE;
 
     private static final int COST = 0;
