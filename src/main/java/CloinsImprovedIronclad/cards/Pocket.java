@@ -52,7 +52,7 @@ public class Pocket extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new PocketAction(magicNumber, m));
+        AbstractDungeon.player.gainGold(magicNumber);
     }
 
 
