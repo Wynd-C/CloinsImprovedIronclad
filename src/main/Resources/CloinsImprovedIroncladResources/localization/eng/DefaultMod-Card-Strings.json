@@ -95,5 +95,13 @@
   "CloinsImprovedIronclad:Pocket": {
     "NAME": "Pickpocket",
     "DESCRIPTION": "If the enemy does not intend to attack NL Gain !M! gold. NL Exhaust."
+  },
+  "CloinsImprovedIronclad:StrikeFear": {
+    "NAME": "Strike Fear",
+    "DESCRIPTION": "Apply !M! Vulnerable to an enemy 3 times. NL Exhaust."
+  },
+  "CloinsImprovedIronclad:CallDown": {
+    "NAME": "Call Down",
+    "DESCRIPTION": "Apply !M! Lock-on to ALL enemies. NL Exhaust."
   }
 }
