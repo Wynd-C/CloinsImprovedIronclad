@@ -55,6 +55,7 @@ public class Versatility extends AbstractDynamicCard {
         baseMagicNumber = magicNumber;
         this.showEvokeValue = true;
         this.showEvokeOrbCount = 1;
+        this.tags.add(CardTags.STRIKE);
     }
 
 
