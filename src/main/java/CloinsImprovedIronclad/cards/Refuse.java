@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.powers.ChokePower;
 import com.megacrit.cardcrawl.powers.NoxiousFumesPower;
 
 
@@ -30,7 +31,7 @@ public class Refuse extends AbstractDynamicCard {
     public static final String ID = DefaultMod.makeID(Refuse.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Refuse.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+
 
     // /TEXT DECLARATION/
 
@@ -66,10 +67,13 @@ public class Refuse extends AbstractDynamicCard {
     }
 
     public void triggerOnManualDiscard() {
-        calculateCardDamage(null);
-       AbstractDungeon.actionManager.addToBottom(
-               new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NoxiousFumesPower(
-                       AbstractDungeon.player, magicNumber), magicNumber));
+        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        if(randomMonster != null){
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(
+                            randomMonster, AbstractDungeon.player, new ChokePower(randomMonster, magicNumber), magicNumber)
+                    );
+        }
     }
 
     public AbstractCard makeCopy() {return new Refuse(); }
