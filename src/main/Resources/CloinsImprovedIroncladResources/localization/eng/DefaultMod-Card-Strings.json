@@ -65,7 +65,7 @@
   },
   "CloinsImprovedIronclad:Pinch": {
     "NAME": "Pinch",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 strength.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 Strength.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain 1 Strength."
   },
   "CloinsImprovedIronclad:EXClash": {
@@ -78,7 +78,7 @@
   },
   "CloinsImprovedIronclad:Refuse": {
     "NAME": "Choking Gas Bomb",
-    "DESCRIPTION": "If this card is discarded from your hand, NL Apply !M! Choking to All Enemies."
+    "DESCRIPTION": "If this card is discarded from your hand, NL Apply !M! #yChoked to All Enemies."
   },
   "CloinsImprovedIronclad:Ferment": {
     "NAME": "Fermenting Poison",

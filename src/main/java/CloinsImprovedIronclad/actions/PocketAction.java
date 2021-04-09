@@ -3,6 +3,7 @@ package CloinsImprovedIronclad.actions;
 import CloinsImprovedIronclad.cards.AbstractDynamicCard;
 import CloinsImprovedIronclad.cards.Pocket;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.unique.GreedAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -31,7 +32,7 @@ public class PocketAction extends AbstractGameAction {
     }
     public void update(){
         if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() >= 0){
-            AbstractDungeon.player.gainGold(this.increaseGold);
+            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(increaseGold));
         }
         this.isDone = true;
     }

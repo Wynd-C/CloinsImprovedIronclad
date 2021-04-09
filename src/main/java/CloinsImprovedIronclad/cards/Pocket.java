@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
+import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
 
@@ -52,7 +54,9 @@ public class Pocket extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.player.gainGold(magicNumber);
+        AbstractDungeon.actionManager.addToBottom(new PocketAction(magicNumber, m));
+        AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
+        AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
     }
 
 
