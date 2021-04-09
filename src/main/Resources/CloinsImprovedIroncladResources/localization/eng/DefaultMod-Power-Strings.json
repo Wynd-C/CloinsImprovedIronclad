@@ -6,5 +6,10 @@
 "CloinsImprovedIronclad:RarePower": {
         "NAME": "Placeholder Power",
         "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-}
+},
+"CloinsImprovedIronclad:StrikeFear": {
+        "NAME": "Strike Fear",
+        "DESCRIPTIONS": ["Whenever you play an attack, apply !M! weak."]
+
+        }
 }

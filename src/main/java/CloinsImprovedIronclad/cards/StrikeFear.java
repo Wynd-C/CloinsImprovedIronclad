@@ -1,5 +1,6 @@
 package CloinsImprovedIronclad.cards;
 
+import CloinsImprovedIronclad.powers.StrikeFearPower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -35,11 +36,9 @@ public class StrikeFear extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.RED;
 
     private static final int COST = 1;  // COST = 1
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = 1
 
     private static final int MAGICNUMBER = 1;
     private static final int UPGRADE_PLUS_MAGICNUMBER = 1;
-    private static final int SECONDMAGICNUMBER = 3;
 
 
     // /STAT DECLARATION/
@@ -49,9 +48,6 @@ public class StrikeFear extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGICNUMBER;
         magicNumber = baseMagicNumber;
-        defaultBaseSecondMagicNumber = SECONDMAGICNUMBER;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber;
-        this.exhaust = true;
         this.tags.add(CardTags.STRIKE);
     }
 
@@ -59,9 +55,7 @@ public class StrikeFear extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i =0; i < defaultSecondMagicNumber; i++){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrikeFearPower(p, this.magicNumber), this.magicNumber));
 
     }
 
@@ -72,7 +66,6 @@ public class StrikeFear extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

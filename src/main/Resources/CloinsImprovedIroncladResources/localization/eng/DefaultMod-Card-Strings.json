@@ -98,7 +98,7 @@
   },
   "CloinsImprovedIronclad:StrikeFear": {
     "NAME": "Strike Fear",
-    "DESCRIPTION": "Apply !M! Weakened to an enemy 3 times. NL Exhaust."
+    "DESCRIPTION": "Whenever you play an attack this turn, NL apply !M! Weak to ALL enemies."
   },
   "CloinsImprovedIronclad:CallDown": {
     "NAME": "Call Down",

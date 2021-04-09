@@ -33,10 +33,9 @@ public class PocketAction extends AbstractGameAction {
         this.targetMonster = m;
     }
     public void update(){
-        if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() >= 0){
+        if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() <= 0){
             AbstractDungeon.actionManager.addToBottom(new GainGoldAction(increaseGold));
-            AbstractDungeon.effectList.add(new RainingGoldEffect(increaseGold * 2, true));
-            AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
+            AbstractDungeon.effectList.add(new RainingGoldEffect(increaseGold * 5, true));
         }
         this.isDone = true;
     }
