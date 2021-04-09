@@ -18,6 +18,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
+import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 
 public class PocketAction extends AbstractGameAction {
     private int increaseGold;
@@ -33,6 +35,8 @@ public class PocketAction extends AbstractGameAction {
     public void update(){
         if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() >= 0){
             AbstractDungeon.actionManager.addToBottom(new GainGoldAction(increaseGold));
+            AbstractDungeon.effectList.add(new RainingGoldEffect(increaseGold * 2, true));
+            AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
         }
         this.isDone = true;
     }

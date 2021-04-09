@@ -22,7 +22,7 @@ public class Pocket extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Pocket.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Skill.png");// "public static final String IMG = makeCardPath("Pocket.png");
+    public static final String IMG = makeCardPath("Pocket.png");// "public static final String IMG = makeCardPath("Pocket.png");
 
 
     // /TEXT DECLARATION/
@@ -55,8 +55,6 @@ public class Pocket extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new PocketAction(magicNumber, m));
-        AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
-        AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
     }
 
 

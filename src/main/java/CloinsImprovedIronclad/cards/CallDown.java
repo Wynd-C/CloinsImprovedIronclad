@@ -4,13 +4,17 @@ import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.blue.LockOn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.LockOnPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.Iterator;
 
@@ -55,19 +59,22 @@ public class CallDown extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
 
-            while(var3.hasNext()){
+            while(var3.hasNext()) {
                 AbstractMonster monster = (AbstractMonster)var3.next();
-                if (!monster.isDead && !monster.isDying){
+                if (!monster.isDead && !monster.isDying) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LockOnPower(m, this.magicNumber), this.magicNumber));
                 }
             }
         }
-    }
 
+    }
+    public AbstractCard makeCopy() {
+        return new LockOn();
+    }
 
     // Upgraded stats.
     @Override

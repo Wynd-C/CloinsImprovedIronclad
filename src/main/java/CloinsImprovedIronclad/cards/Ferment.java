@@ -35,10 +35,10 @@ public class Ferment extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.GREEN;
 
     private static final int COST = 2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC_NUMBER = 5;
-    private static final int SECOND_MAGIC_NUMBER = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int SECOND_MAGIC_NUMBER = 2;// UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 3;
 
     // /STAT DECLARATION/
 
@@ -73,7 +73,7 @@ public class Ferment extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
         }
     }
 
