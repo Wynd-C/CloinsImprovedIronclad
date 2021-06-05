@@ -103,5 +103,9 @@
   "CloinsImprovedIronclad:CallDown": {
     "NAME": "Call Down",
     "DESCRIPTION": "Apply !M! Lock-on to ALL enemies. NL Exhaust."
+  },
+  "CloinsImprovedIronclad:RagsToRiches": {
+    "NAME": "Rags To Riches",
+    "DESCRIPTION": "Discard !M! cards. NL Add a card from your discard pile to your hand."
   }
 }
