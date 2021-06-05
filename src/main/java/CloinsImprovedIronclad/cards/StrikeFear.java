@@ -22,7 +22,7 @@ public class StrikeFear extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(StrikeFear.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Skill.png");// "public static final String IMG = makeCardPath("StrikeFear.png");
+    public static final String IMG = makeCardPath("StrikeFearBeta.png");// "public static final String IMG = makeCardPath("StrikeFear.png");
 
 
     // /TEXT DECLARATION/
