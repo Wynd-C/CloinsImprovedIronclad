@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
 import java.util.Iterator;
 
 import static CloinsImprovedIronclad.DefaultMod.makePowerPath;
@@ -56,7 +58,7 @@ public class StrikeFearPower extends AbstractPower implements CloneablePowerInte
 
             while (var3.hasNext()) {
                 AbstractMonster mo = (AbstractMonster) var3.next();
-                this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.amount, false), this.amount, true, AttackEffect.NONE));
+                this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.amount, false), this.amount, true, AttackEffect.NONE));
             }
         }
 

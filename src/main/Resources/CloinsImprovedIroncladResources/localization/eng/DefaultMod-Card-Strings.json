@@ -61,12 +61,12 @@
   },
   "CloinsImprovedIronclad:Duster": {
     "NAME": "Duster",
-    "DESCRIPTION": "Draw up to !M! Status Cards from your draw pile."
+    "DESCRIPTION": "Draw up to !M! Status Cards from your draw pile. NL Exhaust 1 card in your hand."
   },
   "CloinsImprovedIronclad:Pinch": {
     "NAME": "Pinch",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 Strength.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain 1 Strength."
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 Temporary Strength.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain 1 Permanent Strength."
   },
   "CloinsImprovedIronclad:EXClash": {
     "NAME": "EX Clash",

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.characters.TheDefault;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static CloinsImprovedIronclad.DefaultMod.makeCardPath;
@@ -43,9 +44,9 @@ public class Pinch extends AbstractDynamicCard {
 
     private static final int COST = 0;  // COST = ${COST}
 
-    private static final int DAMAGE = 2;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = -1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-    private static final int ATTACKS = 1;
+    private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
+    //private static final int UPGRADE_PLUS_DMG = -1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    //private static final int ATTACKS = 1;
     private static final int UPGRADE_PLUS_ATTACKS = 1;
     private static final int STRENGTH = 1;
 
@@ -55,7 +56,7 @@ public class Pinch extends AbstractDynamicCard {
     public Pinch() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = ATTACKS;
+        //magicNumber = baseMagicNumber = ATTACKS;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = STRENGTH;
     }
 
@@ -63,21 +64,28 @@ public class Pinch extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++)
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p,defaultBaseSecondMagicNumber)));
+        if(!upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, defaultBaseSecondMagicNumber)));
+        }
+    }
+
+        /* for (int i = 0; i < magicNumber; i++)
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn))
             );
         {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, defaultBaseSecondMagicNumber)));
         }
     }
-
+*/
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeMagicNumber(UPGRADE_PLUS_ATTACKS);
+            //this.upgradeDamage(UPGRADE_PLUS_DMG);
+            //this.upgradeMagicNumber(UPGRADE_PLUS_ATTACKS);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

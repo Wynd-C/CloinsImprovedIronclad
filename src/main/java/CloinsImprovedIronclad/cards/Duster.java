@@ -3,6 +3,7 @@ package CloinsImprovedIronclad.cards;
 import CloinsImprovedIronclad.DefaultMod;
 import CloinsImprovedIronclad.actions.DrawStatusAction;
 import CloinsImprovedIronclad.characters.TheDefault;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,6 +34,7 @@ public class Duster extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < MAGICNUMBER; i++)
         AbstractDungeon.actionManager.addToBottom(new DrawStatusAction(MAGICNUMBER, p));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(1, false, true, false));
     }
     /* public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);

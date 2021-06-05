@@ -66,16 +66,12 @@ public class CallDown extends AbstractDynamicCard {
             while(var3.hasNext()) {
                 AbstractMonster monster = (AbstractMonster)var3.next();
                 if (!monster.isDead && !monster.isDying) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LockOnPower(m, this.magicNumber), this.magicNumber));
+                    this.addToBot(new ApplyPowerAction(monster, p, new LockOnPower(p, this.magicNumber), this.magicNumber));
                 }
             }
         }
 
     }
-    public AbstractCard makeCopy() {
-        return new CallDown();
-    }
-
     // Upgraded stats.
     @Override
     public void upgrade() {
@@ -84,5 +80,8 @@ public class CallDown extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
             initializeDescription();
         }
+    }
+    public AbstractCard makeCopy() {
+        return new CallDown();
     }
 }
