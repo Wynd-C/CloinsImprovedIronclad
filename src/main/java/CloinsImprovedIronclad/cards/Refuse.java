@@ -31,7 +31,7 @@ public class Refuse extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Refuse.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Refuse.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Choking_gas_bomb.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
 
 
