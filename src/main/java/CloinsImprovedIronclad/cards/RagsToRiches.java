@@ -22,7 +22,7 @@ public class RagsToRiches extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(RagsToRiches.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("RagsToRiches.png");
+    public static final String IMG = makeCardPath("RagsToRiches.jpg");// "public static final String IMG = makeCardPath("RagsToRiches.png");
 
 
     // /TEXT DECLARATION/
