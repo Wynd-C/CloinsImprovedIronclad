@@ -67,11 +67,13 @@ public class Versatility extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, 4), 4));
         }
         else if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.DEFECT) {
-                            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
+            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
         }
         else if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.THE_SILENT) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1), 1));
+        }
+        else if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.IRONCLAD) {
+            this.addToBot(new ApplyPowerAction(p, p, new RagePower(p, this.magicNumber), this.magicNumber));
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
