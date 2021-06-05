@@ -25,7 +25,7 @@ public class Versatility extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(Versatility.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Versatility.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 
 
     // /TEXT DECLARATION/
