@@ -65,7 +65,7 @@ public class StrikeFearPower extends AbstractPower implements CloneablePowerInte
     }
 
     public void atEndOfRound() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "StrikeFearPower"));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
     }
 
     public void updateDescription() {
