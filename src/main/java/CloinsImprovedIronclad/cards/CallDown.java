@@ -27,7 +27,7 @@ public class CallDown extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(CallDown.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("calldown.png");// "public static final String IMG = makeCardPath("CallDown.png");
+    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("CallDown.png");
 
 
     // /TEXT DECLARATION/

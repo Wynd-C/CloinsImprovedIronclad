@@ -65,8 +65,9 @@ public class StrikeFearPower extends AbstractPower implements CloneablePowerInte
     }
 
     public void atEndOfRound() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "StrikeFearPower"));
     }
+
     public void updateDescription() {
         this.description = powerStrings.DESCRIPTIONS[0] + this.amount + powerStrings.DESCRIPTIONS[1];
     }

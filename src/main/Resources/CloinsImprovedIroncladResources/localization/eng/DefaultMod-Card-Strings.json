@@ -61,7 +61,7 @@
   },
   "CloinsImprovedIronclad:Duster": {
     "NAME": "Duster",
-    "DESCRIPTION": "Draw up to !M! Status Cards from your draw pile. NL Exhaust 1 card."
+    "DESCRIPTION": "Draw up to !M! Status Cards from your draw pile. NL Exhaust 1 card in your hand."
   },
   "CloinsImprovedIronclad:Pinch": {
     "NAME": "Pinch",
